@@ -65,16 +65,16 @@ set mouse+=a
 call plug#begin('~/.vim/plugged')
 
 " LSP 客户端
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
 
 " 自动补全
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'prabirshrestha/asyncomplete.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " UI 增强
-Plug 'kavbrian21/VimCompletesMe' " 简单补全
-Plug 'dense-analysis/ale'   " 语法检查
+" Plug 'kavbrian21/VimCompletesMe' " 简单补全
+" Plug 'dense-analysis/ale'   " 语法检查
 
 " File Explorer
 Plug 'preservim/nerdtree'
@@ -99,41 +99,41 @@ set background=dark
 let g:AutoPairsFlyMode = 1
 
 " LSP 配置
-let g:lsp_diagnostics_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_signs_enabled = 1
+" let g:lsp_diagnostics_enabled = 1
+" let g:lsp_diagnostics_echo_cursor = 1
+" let g:lsp_signs_enabled = 1
 
 " 快捷键映射
-function! s:on_lsp_buffer_enabled() abort
-  setlocal omnifunc=lsp#complete
-  nmap <buffer> gd <plug>(lsp-definition)
-  nmap <buffer> gr <plug>(lsp-references)
-  nmap <buffer> K <plug>(lsp-hover)
-  nmap <buffer> <leader>rn <plug>(lsp-rename)
-  nmap <buffer> <leader>ca <plug>(lsp-code-action)
-endfunction
+" function! s:on_lsp_buffer_enabled() abort
+"   setlocal omnifunc=lsp#complete
+"   nmap <buffer> gd <plug>(lsp-definition)
+"   nmap <buffer> gr <plug>(lsp-references)
+"   nmap <buffer> K <plug>(lsp-hover)
+"   nmap <buffer> <leader>rn <plug>(lsp-rename)
+"   nmap <buffer> <leader>ca <plug>(lsp-code-action)
+" endfunction
 
-augroup lsp_install
-  autocmd!
-  autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
+" augroup lsp_install
+"   autocmd!
+"   autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+" augroup END
 
 " Rust 特定配置
-let g:lsp_settings = {
-\  'rust-analyzer': {
-\    'initialization_options': {
-\      'checkOnSave': {
-\        'command': 'clippy'
-\      }
-\    }
-\  }
-\}
+" let g:lsp_settings = {
+" \  'rust-analyzer': {
+" \    'initialization_options': {
+" \      'checkOnSave': {
+" \        'command': 'clippy'
+" \      }
+" \    }
+" \  }
+" \}
 
 " 启用 ALE 作为语法检查器
-let g:ale_linters = {'rust': ['analyzer']}
-let g:ale_fixers = {'rust': ['rustfmt']}
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
+" let g:ale_linters = {'rust': ['analyzer']}
+" let g:ale_fixers = {'rust': ['rustfmt']}
+" let g:ale_sign_error = '✘'
+" let g:ale_sign_warning = '⚠'
 
 " Maps
 map <C-n> :NERDTreeToggle<CR>
@@ -161,8 +161,8 @@ function! SetupLayout()
   let height = float2nr(&lines * 0.3)
   botright term
   execute 'resize' . height
-  NERDTree
-  wincmd l
+  " NERDTree
+  " wincmd l
 endfunction
 
 autocmd VimEnter * call SetupLayout()
