@@ -155,6 +155,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 nnoremap <C-UP> <C-w>+
 nnoremap <C-DOWN> <C-w>-
+nnoremap <C-q> :qa!<CR>
+inoremap <C-q> <Esc>:qa!<CR>
+nnoremap <C-w> :w<CR>
+inoremap <C-w> <Esc>:w<CR>a
 
 " auto launch
 function! SetupLayout()
