@@ -86,9 +86,17 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
+" Autopair
+Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
+
+" Theme config
 colorscheme gruvbox
 set background=dark
+
+" Autopair config
+let g:AutoPairsFlyMode = 1
 
 " LSP 配置
 let g:lsp_diagnostics_enabled = 1
